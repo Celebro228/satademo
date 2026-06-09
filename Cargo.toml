@@ -4,15 +4,16 @@ version = "0.1.2"
 edition = "2024"
 
 [dependencies]
-inventory = "0.3"
-flecs_ecs = "0.2.2"
 satademo_macro = { path = "./satademo_macro" }
+inventory = "0.3.24"
+hecs = "0.11.0"
+hashbrown = "0.17.1"
 
 
 
 # Дебаг профиль
 [profile.dev]
-opt-level = 1
+opt-level = 3
 
 [profile.dev.package."*"]
 opt-level = 3
@@ -29,6 +30,3 @@ incremental = false
 rpath = false
 codegen-units = 1
 strip = true
-
-[profile.release.package."*"]
-opt-level = 3

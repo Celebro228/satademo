@@ -1,16 +1,11 @@
-pub use flecs_ecs::{
-    core::{Entity, SystemAPI, World as WD, flecs},
-    macros::Component as CD
-};
 pub use inventory::*;
 pub use satademo_macro::*;
+pub use hecs::*;
 
+collect!(SystemStart);
+collect!(SystemUpdate);
+collect!(SystemExit);
 
-pub struct SystemAdd(pub fn(&WD));
-collect!(SystemAdd);
-
-
-#[derive(CD)]
-pub struct World {
-    
-}
+pub struct SystemStart(pub fn(&mut World));
+pub struct SystemUpdate(pub fn(&mut World));
+pub struct SystemExit(pub fn(&mut World));

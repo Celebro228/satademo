@@ -1,32 +1,40 @@
 use satademo::prelude::*;
 
 fn main() {
-    let world = flecs_ecs::core::World::new();
-    world.entity().set(Comps { value: 42 });
-    for i in inventory::iter::<SystemAdd> {
-        i.0(&world);
+    let mut world = World::new();
+    world.spawn((Dada, Lulu {}, ));
+
+    for x in world.query_mut::<(&Dada,)>() {
+
     }
-    world.progress();
-    let c: [&dyn Lulu; 1] = [&Dada];
-    let c: [&mut dyn Lulu; 1] = [&mut Dada];
+    for i in iter::<SystemUpdate> {
+        i.0(&mut world);
+    }
+
+    satademo::run();
 }
 
-pub trait Lulu {
-    
+pub struct  Lulu {
+
 }
 
 pub struct Dada;
 
-impl Lulu for Dada {
-    
-}
 
-#[component]
-pub struct Comps {
-    pub value: i32,
-}
+//#[component]
+//pub struct Comps {
+//    pub value: i32,
+//}
+//
+//submit!(&'static Comps);
 
 #[update]
-fn ddd(c: &mut Comps) {
+fn ddd(c: &mut Dada) {
+    println!("hello world!");
+}
+
+
+#[update]
+fn dddd(c: &mut Dada) {
     println!("hello world!");
 }
