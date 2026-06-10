@@ -34,7 +34,7 @@ fn ddd(c: &mut Dada) {
 }
 
 
-#[update]
+#[start]
 fn dddd(c: &mut Dada) {
     println!("hello world!");
 }
