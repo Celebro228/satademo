@@ -29,7 +29,7 @@ pub struct Dada;
 //submit!(&'static Comps);
 
 #[update]
-fn ddd(c: &mut Dada) {
+fn ddd() {
     println!("hello world!");
 }
 
