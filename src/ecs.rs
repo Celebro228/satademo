@@ -1,5 +1,4 @@
 pub use inventory::*;
-pub use satademo_macro::*;
 pub use hecs::*;
 
 collect!(SystemStart);

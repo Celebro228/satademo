@@ -71,3 +71,24 @@ fn system_add(item: TokenStream, system_type: TokenStream2) -> TokenStream {
         }
     }.into()
 }
+
+//#[proc_macro]
+//pub fn function(input: TokenStream) -> TokenStream {
+//    let count = parse_macro_input!(input as syn::LitInt)
+//        .base10_parse::<usize>()
+//        .unwrap();
+//
+//    let funcs = (0..count).map(|i| {
+//        let name = quote::format_ident!("system{}", i);
+//
+//        quote! {
+//            #[update]
+//            fn #name(c: &mut Dada) { c.0 += 1 }
+//        }
+//    });
+//
+//    quote! {
+//        #(#funcs)*
+//    }
+//        .into()
+//}

@@ -1,5 +1,6 @@
 pub mod prelude;
 pub mod ecs;
+pub mod singleton;
 
 pub fn run() {
     let mut world = ecs::World::new();
